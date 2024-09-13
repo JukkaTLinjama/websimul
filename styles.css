@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d1d1d1;
+}
+
+#simulation-container {
+    position: relative;
+    width: 95%;
+    height: 95%;
+    border: 1px solid #ccc;
+    background-color: #13243fdb;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* perspective: 1000px; /* Adjust as needed */
+    /* perspective-origin: 50% 50%; /* This centers the perspective */
+}
+
+#simulation-screen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    /* transform-style: preserve-3d;  /* Adjust as needed */
+}
+
+#simulation-header {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #988a8a;
+    margin: 0;
+}
+
+.simulated-element {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 255, 0.405);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.515); /* Tekstin väri */
+    font-size: 10px; /* Tekstin koko */
+    font-weight: bold; /* Tekstin paksuus */
+    text-align: center; /* Tekstin keskitys */
+}
+
+.target-element {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(231, 56, 46, 0.582);  /* Red for high visibility */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure it's on top of other elements */
+}
+
+/* liukuvat värit interpolointiin */
+.spectrum-start {
+    background-color:rgba(184, 46, 186, 0.561); /* T 50% läpinäkyvyys */
+}
+
+.spectrum-middle {
+    background-color: rgba(195, 171, 76, 0.754); /*  läpinäkyvyys */
+}
+
+.spectrum-end {
+    background-color: rgba(0, 0, 255, 0.5); /* Tumma sininen 50% läpinäkyvyys */
+}
+
+.overlay-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #33333332;
+    color: rgba(245, 245, 245, 0.669);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+#control-panel h3 {
+    margin-top: 0;
+}
+.overlay-panel {
+    position: absolute;
+    top: 30;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(117, 111, 121, 0.333); /* Change from 0.9 to 1 for full opacity */
+    padding: 20px;
+    border-left: 2px solid #ccc;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+    z-index: 100;  /* Ensure it's above the simulation elements */
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#startButton, #stopButton {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startButton:hover, #stopButton:hover {
+    background-color: #005bb5;
+}
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
